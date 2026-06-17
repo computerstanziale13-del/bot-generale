@@ -13,7 +13,6 @@ import {
   SlashCommandBuilder,
 } from "discord.js";
 
-// Configurazione base
 const TICKET_CATEGORIES = [
   { id: "gradi_alti", label: "Assistenza Gradi Alti", emoji: "🏅" },
   { id: "segnalazione_utente", label: "Segnalazione Utente", emoji: "🚨" },
@@ -27,7 +26,7 @@ const commands = [
   new SlashCommandBuilder().setName("setup-ticket").setDescription("Invia pannello ticket").setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild).toJSON(),
 ];
 
-function startBot() {
+export function startBot() {
   const token = process.env["DISCORD_BOT_TOKEN"];
   if (!token) {
     console.error("ERRORE: DISCORD_BOT_TOKEN non trovato!");
@@ -78,5 +77,3 @@ function startBot() {
 
   client.login(token).catch(e => console.error("ERRORE LOGIN DISCORD:", e));
 }
-
-startBot();
