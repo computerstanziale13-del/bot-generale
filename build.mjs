@@ -6,4 +6,6 @@ await build({
   platform: 'node',
   format: 'esm',
   outfile: 'dist/index.mjs',
+  packages: 'external', 
+  target: 'node18',
 });
